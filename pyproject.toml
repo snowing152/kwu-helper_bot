@@ -1,0 +1,46 @@
+[project]
+name = "kwu-helper"
+version = "0.1.0"
+description = "Telegram RAG bot that answers Kwangwoon University rule questions for Russian-speaking foreign students."
+readme = "README.md"
+authors = [
+    { name = "Maksim" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "beautifulsoup4>=4.15.0",
+    "httpx>=0.28.1",
+]
+
+[build-system]
+requires = ["uv_build>=0.11.28,<0.12.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "mypy>=2.4.1",
+    "pytest>=9.2.0",
+    "pytest-asyncio>=1.5.0",
+    "ruff>=0.17.6",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py313"
+# Plans and specs contain illustrative code snippets, not project code.
+extend-exclude = ["docs"]
+
+[tool.ruff.lint]
+# E/F: pycodestyle + pyflakes basics. I: import order. B: bugbear (likely bugs).
+# UP: modern syntax for the target version. SIM: simplifications.
+# ASYNC: blocking calls inside async code. RUF: ruff's own checks.
+select = ["E", "F", "I", "B", "UP", "SIM", "ASYNC", "RUF"]
+
+[tool.mypy]
+strict = true
+mypy_path = "src"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+testpaths = ["tests"]

@@ -1,0 +1,16 @@
+# Scraped university content: never committed (the crawler rebuilds it).
+data/
+
+# Secrets.
+.env
+
+# Python and tool caches.
+.venv/
+__pycache__/
+*.py[cod]
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+
+# Executor scratch space for plans.
+.superpowers/
