@@ -46,6 +46,12 @@ Telegram bot (aiogram 3 via FastAPI webhook), Railway deploy.
 - KLAS and anything behind a student login are out of scope. Never store student passwords.
 - New dependencies need the owner's approval.
 
+## Task tracking (Jira)
+
+- Jira project `KWU` on maksimtyan152.atlassian.net (Atlassian MCP server). Epics KWU-1..9 = milestones M0..M8.
+- Flow: To Do -> In Progress (work started) -> In Review (checks green, commit awaits owner OK) -> Done (committed).
+- Put the issue key at the end of the commit subject: `feat(crawler): add fetcher (KWU-12)`.
+
 ## Gotchas
 
 - Development is on Windows, deployment on Linux (Railway). Use `pathlib`, open files with
